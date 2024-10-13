@@ -15,13 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -42,16 +36,11 @@ export default function SignIn() {
 
   const onSubmit = async (values: z.infer<typeof signInFormSchema>) => {
     try {
-      // logic goes here
-      const result = await handleCredentialsSignIn(values);
+      await handleCredentialsSignIn(values);
     } catch (error) {
       console.log("\nthe following error occured:\n");
       console.error(`${error}`);
     }
-  };
-
-  const onGithubSubmit = async () => {
-    await handleGithubSignIn();
   };
 
   return (

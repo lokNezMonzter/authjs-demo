@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <SessionProvider>
       <html lang="en">
-        <body className={`${inter.className} antialiased h-screen`}>
+        <body className={`${inter.className} antialiased bg-gray-100 h-screen`}>
           <NavbarComponent />
           {children}
         </body>

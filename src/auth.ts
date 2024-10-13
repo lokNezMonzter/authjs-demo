@@ -6,7 +6,12 @@ import { signInFormSchema } from "@/common/schemas";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
-    Github,
+    Github({
+      profile(profile) {
+        console.log(profile);
+        return { id: "string", role: profile.type };
+      },
+    }),
     Credentials({
       credentials: {
         email: { label: "Email", type: "email", placeholder: "Email" },
